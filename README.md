@@ -1,4 +1,4 @@
-# 📊 Análise de Voos -- SQL Project
+# 📊 Análise de Voos - Projeto SQL 
 
 Este projeto tem como objetivo explorar e analisar o dataset
 **`airlines_flights_data`**, que contém informações sobre voos,
