@@ -1,0 +1,102 @@
+-- Preco médio por companhia aerea
+
+SELECT  airline, ROUND(AVG(price), 2) AS preco_medio FROM airlines_flights_data 
+GROUP BY airline;
+
+-- Liste os 5 voos mais caros
+
+SELECT flight, price FROM airlines_flights_data
+ORDER BY price desc 
+limit 5;
+
+-- Mostre o número de voos por faixa de horário de saída
+
+SELECT departure_time, COUNT(*) AS total_voos
+FROM airlines_flights_data
+GROUP BY departure_time
+ORDER BY total_voos DESC;
+
+-- Compare o preço médio de voos diretos com o de voos com escalas.
+
+SELECT stops, ROUND(AVG(price), 2) AS Preco_medio FROM airlines_flights_data
+GROUP BY stops
+ORDER BY Preco_medio;
+
+-- Voos mais caros por companhia aerea
+
+SELECT airline, MAX(price) as Preco_max FROM airlines_flights_data
+GROUP BY airline
+ORDER BY Preco_max DESC;
+
+-- Mostre os 3 destinos mais frequentes para voos que saem de Delhi.
+
+SELECT source_city, destination_city, COUNT(destination_city) as destino 
+FROM airlines_flights_data
+where source_city = 'Delhi'
+GROUP BY destination_city
+ORDER BY destino DESC
+LIMIT 3;
+
+-- Calcule a média de preço de passagens agrupadas por classe (Economy/Business) e companhia aérea.
+
+SELECT class, airline, ROUND(AVG(price), 2) AS preco_medio FROM airlines_flights_data
+GROUP BY class, airline;
+
+-- Liste as companhias que têm preço médio acima da média geral.
+
+SELECT airline, ROUND(AVG(price), 2) AS preco_medio
+FROM airlines_flights_data
+GROUP BY airline
+HAVING AVG(price) > (SELECT AVG(price) FROM airlines_flights_data)
+ORDER BY preco_medio DESC;
+-- Preco médio por companhia aerea
+
+SELECT  airline, ROUND(AVG(price), 2) AS preco_medio FROM airlines_flights_data 
+GROUP BY airline;
+
+-- Liste os 5 voos mais caros de todo o dataset
+
+SELECT flight, price FROM airlines_flights_data
+ORDER BY price desc 
+limit 5;
+
+-- Mostre o número de voos por faixa de horário de saída
+
+SELECT departure_time, COUNT(*) AS total_voos
+FROM airlines_flights_data
+GROUP BY departure_time
+ORDER BY total_voos DESC;
+
+-- Compare o preço médio de voos diretos com o de voos com escalas.
+
+SELECT stops, ROUND(AVG(price), 2) AS Preco_medio FROM airlines_flights_data
+GROUP BY stops
+ORDER BY Preco_medio;
+
+-- Voos mais caros por companhia aerea
+
+SELECT airline, MAX(price) as Preco_max FROM airlines_flights_data
+GROUP BY airline
+ORDER BY Preco_max DESC;
+
+-- Mostre os 3 destinos mais frequentes para voos que saem de Delhi.
+
+SELECT source_city, destination_city, COUNT(destination_city) as destino 
+FROM airlines_flights_data
+where source_city = 'Delhi'
+GROUP BY destination_city
+ORDER BY destino DESC
+LIMIT 3;
+
+-- Calcule a média de preço de passagens agrupadas por classe (Economy/Business) e companhia aérea.
+
+SELECT class, airline, ROUND(AVG(price), 2) AS preco_medio FROM airlines_flights_data
+GROUP BY class, airline;
+
+-- Liste as companhias que têm preço médio acima da média geral.
+
+SELECT airline, ROUND(AVG(price), 2) AS preco_medio
+FROM airlines_flights_data
+GROUP BY airline
+HAVING AVG(price) > (SELECT AVG(price) FROM airlines_flights_data)
+ORDER BY preco_medio DESC;
