@@ -20,7 +20,8 @@ para responder perguntas de negócio comuns no setor aéreo.
 
 Mostra em que horários do dia acontecem mais voos, algo que pode interessar tanto passageiros quanto companhias aérea
 
-<img width="600" height="371" alt="chart" src="https://github.com/user-attachments/assets/9bbfd551-d3a2-40ea-866c-38a81593e06f" />
+<img width="600" height="371" alt="Distribuição de voos por faixa de horário de saída" src="https://github.com/user-attachments/assets/6fe629a9-2437-4ceb-89a7-c6a872d19203" />
+
 
 ------------------------------------------------------------------------
 
